@@ -45,8 +45,7 @@ def multinomial(table: biom.Table,
 
     model = MultRegression(learning_rate=learning_rate, clipnorm=clipnorm,
                            beta_mean=differential_prior,
-                           batch_size=batch_size,
-                           save_path=None)
+                           batch_size=batch_size)
     with tf.Graph().as_default(), tf.Session() as session:
         model(session, trainX, trainY, testX, testY)
 
